@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('mysql://giri:techotron20@kilocart20.cjjypqa5zqp1.ap-south-1.rds.amazonaws.com:3306/kilocart', echo=True)
+engine = create_engine('mysql://user:pwd@localhost/college', echo=True)
 
 Session = sessionmaker(bind=engine)
 session = Session()
