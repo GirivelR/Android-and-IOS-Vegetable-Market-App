@@ -24,8 +24,8 @@ def sendorderuser(receiver_email,res,time):
     try:
         smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
         smtp_ssl_port = 465
-        username = 'kilocart2020@gmail.com '
-        password = 'Kilocart@2020'
+        username = 'kilocart20@gmail.com '
+        password = 'Kilocart@20'
         sender = username
         targets = receiver_email
         msg = MIMEText('Hi,Your Orders :\n {}'.format(str(res)))        
@@ -43,9 +43,9 @@ def sendorderadmin(res,user,time):
     try:
         smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
         smtp_ssl_port = 465
-        username = 'kilocart2020@gmail.com '
-        password = 'Kilocart@2020'
-        sender = 'kilocart2020@gmail.com '
+        username = 'kilocart20@gmail.com '
+        password = 'Kilocart@20'
+        sender = 'kilocart20@gmail.com '
         targets = sender
         msg = MIMEText('Hi,Order details : {}'.format(str(res) + str(user)))        
         msg['Subject'] = 'Your got an Order at {}'.format(str(time))
@@ -62,9 +62,9 @@ def sendadmin(res):
     try:
         smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
         smtp_ssl_port = 465
-        username = 'kilocart2020@gmail.com '
-        password = 'Kilocart@2020'
-        sender = 'kilocart2020@gmail.com '
+        username = 'kilocart20@gmail.com '
+        password = 'Kilocart@20'
+        sender = 'kilocart20@gmail.com '
         targets = sender
         msg = MIMEText('Hi,you got new registration : {}'.format(str(res)))         
         msg['Subject'] = 'Registration details'
@@ -81,9 +81,9 @@ def send(receiver_email,code,message=None):
     try:
         smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
         smtp_ssl_port = 465
-        username = 'kilocart2020@gmail.com '
-        password = 'Kilocart@2020'
-        sender = 'kilocart2020@gmail.com '
+        username = 'kilocart20@gmail.com '
+        password = 'Kilocart@20'
+        sender = 'kilocart20@gmail.com '
         targets = receiver_email
         if message:
             msg = MIMEText('Hi,{} : {}'.format(code, message))
@@ -157,7 +157,7 @@ def login():
     if request.method=="POST":
         res=request.json
         print(res)
-        if res['details']['email']=="kilocart2020@gmail.com" and res['details']['password']=='kilocart@20':
+        if res['details']['email']=="kilocart20@gmail.com" and res['details']['password']=='adminpassword':
             return {'sta':'admin'}
         status=Registerdet(email=res['details']['email'],password=res['details']['password']).login()
         if status:
